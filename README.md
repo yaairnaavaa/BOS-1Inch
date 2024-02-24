@@ -194,4 +194,4 @@ function onUniswap() {
 }
 ```
 
-BOS Widget: https://near.org/owa-is-bos.near/widget/1Inch-Swap
+BOS Widget: https://near.social/owa-is-bos.near/widget/1Inch-Swap
