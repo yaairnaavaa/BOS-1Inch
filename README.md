@@ -9,7 +9,8 @@ This repository is an example of how to implement the 1Inch technology to swap t
 To implement the 1Inch technology and swap tokens we must make some configurations in our BOS component.
 The main methods are shown below:
 
-Definition of the network information along with each of its properties, as well as the addresses of the pools to be used for swapping.
+Definition of the network information along with each of its properties, as well as the addresses of the pools to be used for swap:
+
 ```jsx
 const dataChains = {
   1: {
