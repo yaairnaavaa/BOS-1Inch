@@ -2,7 +2,7 @@
 
 This repository is an example of how to implement the 1Inch technology to swap tokens on the Arbitrum network.
 
-![Swap](https://drive.google.com/uc?id=1SAfDdNpwniZb0PDukpGsNFooZJytgh0-)
+<img src="https://drive.google.com/uc?id=1SAfDdNpwniZb0PDukpGsNFooZJytgh0-" width="50%">
 
 ## How to implement 1Inch technology in BOS?
 
@@ -193,5 +193,24 @@ function onUniswap() {
     });
 }
 ```
+## How to test the Component?
 
-BOS Widget: https://near.social/owa-is-bos.near/widget/1Inch-Swap
+To run this project in BOS you must run the widget (Swap.jsx) on an available BOS gateway, for example: [near.social ](https://near.social/edit)
+
+Once the code for the widget has been added we can render it by clicking on the preview button to render the component.
+
+<img src="https://drive.google.com/uc?id=1C5A41cI60Kl1-55f2f-H642JtvxAyM5_" width="50%">
+
+For this example you will also need to have installed and configured [metamask](https://metamask.io/) and the [Arbitrum One Network](https://arbitrum.io/).
+
+Once this is done, you can click **Connect Wallet** to run metamask and connect the component to your account.
+
+<img src="https://drive.google.com/uc?id=1REPFpcc0Ulvo_qEcWqmbf0YMC6BNbldz" width="50%">
+
+Once metamask is connected we will be able to start interacting with the UI.
+
+
+
+## BOS Widget
+
+Swap: https://near.social/owa-is-bos.near/widget/1Inch-Swap
