@@ -209,7 +209,10 @@ Once this is done, you can click **Connect Wallet** to run metamask and connect 
 
 Once metamask is connected we will be able to start interacting with the UI.
 
+The first step to do swap between tokens is to select the tokens from the list and then enter the amount of Token A to be converted to Token B (the component will show a preview of how many tokens you will be receiving for that conversion) and to start the swap process we must click on the **Swap button** to execute metamask and confirm the transaction.
+We can then view the transaction in the explorer to verify that the swap was successfully executed.
 
+<img src="https://drive.google.com/uc?id=1m2sWolleql2-7kMQWmQ-I_3Pi10PF220" width="50%">
 
 ## BOS Widget
 
