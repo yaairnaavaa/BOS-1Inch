@@ -9,7 +9,16 @@ This repository is an example of how to implement the 1Inch technology to swap t
 To implement the 1Inch technology and swap tokens we must make some configurations in our BOS component.
 The main methods are shown below:
 
-Definition of the network information along with each of its properties, as well as the addresses of the pools to be used for swap:
+The following is the definition of the network information along with each of its properties, as well as the addresses of the pools to be used for the exchange.
+
+As we can see we have a constant called **dataChains** which has different properties, in this case we have the information of the Ethereum and Arbitrum network (this is the one we will be interacting with).
+
+The most important properties to consider are the following:
+
+  * **urlScan**: transaction explorer url.
+  * **decimals**: number of decimal of the token.
+  * **AGGREGATOR_CONTRACT_ADDRESS**: contract address to do swap.
+  * **pools**: list of pools of tokens to do swap.
 
 ```jsx
 const dataChains = {
@@ -59,15 +68,18 @@ const dataChains = {
 };
 ```
 
-Switch Network:
+**Init Network**: The following lines of code will allow to create a new property in the state of the component called **blockchain** where you will have the information of the network with which we will be interacting, in this case **Arbitrum**.
 
 ```jsx
-
 // Add property to the state to set the blockchain to use where we include its name and chainId.
 State.init({
   blockchain: { name: "Arbitrum", chainId: 42161 },
 });
+```
 
+**Get Network**: The following method will allow us to obtain the current network in which we are connected with Metamask and in case we are not in the correct network (**Arbitrum**) the method to change the network will be executed.
+
+```jsx
 // Method to obtain the current network and validate that we are in the Arbitrum network, otherwise make the network change.
 async function getNetwork(sender) {
   Ethers.provider()
@@ -85,7 +97,11 @@ async function getNetwork(sender) {
 
     });
 }
+```
 
+**Switch Network**: This method will execute metamask to change the network to the one configured and initialized in the state of the componen (**Arbitrum**).
+
+```jsx
 // Method to change network.
 function switchNetwork(chainId) {
   Ethers.provider().send("wallet_switchEthereumChain", [
@@ -97,7 +113,7 @@ function switchNetwork(chainId) {
 ```
 
 
-Approve Token:
+**Approve Token**: Token approval is the permission granted to smart contracts to spend tokens when users interact with decentralized apps (DApps). In this case, the following method will be used to give permission to the smart contract in charge of Swap so that it can manipulate the token balance and successfully execute the exchange.
 
 ```jsx
 function onApprove() {
@@ -142,7 +158,11 @@ function onApprove() {
 }
 ```
 
-Swap:
+**Swap**: To do a Swap between tokens we must use the following method which will interact with the smart contract, within this method each of the parameters that will be necessary to send to the smart contract automatically using the values entered in the UI are generated, these parameters are the following:
+  * **amount**: amount of Token A to be exchanged.
+  * **minReturn**: minimum amount to be returned from the swap.
+  * **pools**: pool address used for the swap.
+  * **gasLimit**: amount of gas allocated for the execution of the transaction.
 
 ```jsx
 function onUniswap() {
